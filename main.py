@@ -9,6 +9,7 @@ from pymongo import MongoClient
 from pymongo.errors import ConnectionFailure
 import datetime
 import ssl
+from keep_alive import keep_alive
 
 # Carrega variáveis do arquivo .env
 load_dotenv()
@@ -6523,4 +6524,5 @@ if __name__ == "__main__":
         print("ERRO: Token do Discord não encontrado!")
         print("Configure a variável DISCORD_BOT_TOKEN nas Secrets do Replit")
     else:
+        keep_alive()
         bot.run(token)
